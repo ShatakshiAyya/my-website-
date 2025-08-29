@@ -5,97 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Wonderlust Travel</title>
 <style>
-.hero {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 3rem 1rem;
-  background: linear-gradient(to right, #1f1f1f, #2c2c2c);
-  border-radius: 16px;
-}
-.hero h2 {
-  font-size: 2.8rem;
-  color: #00bfa5;
-  margin-bottom: 1rem;
-}
-.hero p {
-  font-size: 1.2rem;
-  color: #b0bec5;
-  margin-bottom: 2rem;
-}
-.hero button {
-  padding: 1rem 2.2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #00bfa5;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.hero button:hover {
-  background-color: #008e76;
-}
-
-.featured-destinations {
-  margin-top: 2rem;
-}
-.featured-destinations h3 {
-  text-align: center;
-  font-size: 2rem;
-  color: #80cbc4;
-  margin-bottom: 1.8rem;
-}
-.featured-grid {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.featured-card {
-  background-color: #1e1e1e;
-  border-radius: 14px;
-  overflow: hidden;
-  width: 300px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-.featured-card:hover {
-  transform: translateY(-8px);
-}
-.featured-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 2px solid #00bfa5;
-}
-.featured-info {
-  padding: 1rem;
-}
-.featured-info h4 {
-  color: #00bfa5;
-  margin-top: 0;
-  font-size: 1.5rem;
-}
-.featured-info p {
-  color: #b2dfdb;
-  font-size: 1rem;
-}
-
-  /* Reset and base */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wonderlust Travel</title>
+<style>
+/* General Styles */
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: #ffffff;
+  color: #333333;
   line-height: 1.6;
 }
+
+/* Header */
 header {
-  background-color: #1f1f1f;
-  color: #f0f0f0;
+  background-color: #f8f8f8;
+  color: #222;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -103,16 +35,15 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ddd;
 }
 header h1 {
   margin: 0;
   font-weight: 700;
   letter-spacing: 3px;
-  /* Removed text-shadow */
 }
 nav a {
-  color: #80cbc4;
+  color: #333;
   text-decoration: none;
   font-weight: 600;
   margin-left: 1.8rem;
@@ -122,63 +53,84 @@ nav a {
 }
 nav a:hover,
 nav a.active {
-  color: #00bfa5;
+  color: #00796b;
   text-decoration: underline;
-  /* Removed text-shadow */
 }
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 5rem 1rem;
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  color: white;
+}
+.hero h2,
+.hero p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+.hero button {
+  background-color: rgba(0, 121, 107, 0.9);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.hero button:hover {
+  background-color: rgba(0, 77, 64, 0.9);
+}
+
+/* Main content */
 main {
   max-width: 1100px;
   margin: 2rem auto 4rem;
   padding: 0 1rem;
 }
 
-/* Country grid for Home and Countries page */
+/* Country Grid */
 .countries-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 .country-card {
-  background-color: #1e1e1e;
-  border-radius: 14px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  /* Removed box-shadow */
-}
-.country-card:hover {
-  transform: translateY(-10px);
-  /* Removed box-shadow */
+  height: 200px;
 }
 .country-card img {
+  height: 120px;
   width: 100%;
-  height: 140px;
   object-fit: cover;
-  border-bottom: 2px solid #00bfa5;
+  border-bottom: 2px solid #00796b;
 }
 .country-name {
-  padding: 1rem;
+  flex: 1;
+  padding: 0.8rem;
   font-weight: 700;
-  font-size: 1.3rem;
-  color: #00bfa5;
+  font-size: 1.1rem;
   text-align: center;
-  flex-grow: 1;
-  /* Removed text-shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00796b;
 }
 
-/* Country Details Page */
-#country-details h2 {
-  color: #00bfa5;
-  margin-bottom: 1rem;
-  font-size: 2.4rem;
-  border-bottom: 3px solid #00bfa5;
-  padding-bottom: 0.3rem;
-  /* Removed text-shadow */
-}
+/* City Section */
 .city-section {
-  background-color: #222222;
+  background-color: #f0f0f0;
   border-radius: 14px;
   padding: 1.8rem;
   margin-bottom: 2.2rem;
@@ -186,95 +138,56 @@ main {
   gap: 1.5rem;
   flex-wrap: wrap;
   align-items: flex-start;
-  transition: background-color 0.3s;
-  /* Removed box-shadow */
-}
-.city-section:hover {
-  background-color: #2a2a2a;
 }
 .city-image {
-  flex: 0 0 260px;
-  height: 160px;
-  border-radius: 16px;
+  width: 250px;
+  height: 180px;
+  border-radius: 10px;
   object-fit: cover;
-  transition: transform 0.3s ease;
-  /* Removed box-shadow */
-}
-.city-image:hover {
-  transform: scale(1.05);
-}
-.city-info {
-  flex: 1;
-  min-width: 280px;
 }
 .city-info h3 {
   margin-top: 0;
-  color: #00bfa5;
+  color: #00796b;
   font-size: 1.8rem;
-  /* Removed text-shadow */
-}
-.city-info p {
-  margin-top: 0.4rem;
-  font-size: 1rem;
-  color: #b2dfdb;
-}
-.places-list {
-  margin-top: 0.6rem;
-  padding-left: 1.4rem;
 }
 .places-list li {
-  margin-bottom: 0.45rem;
   font-weight: 600;
-  color: #80cbc4;
+  color: #00796b;
 }
 
-/* About Page */
+/* About */
 #about h2 {
   color: #009688;
   border-bottom: 3px solid #009688;
   padding-bottom: 0.3rem;
   margin-bottom: 1.5rem;
   font-size: 2.2rem;
-  /* Removed text-shadow */
 }
 #about p {
-  max-width: 900px;
-  font-size: 1.2rem;
-  color: #b0bec5;
-  margin-bottom: 1.4rem;
-  line-height: 1.75;
+  color: #555;
 }
 
-/* Feedback Page */
+/* Feedback */
 #feedback {
-  background-color: #1e1e1e;
-  padding: 2rem 2rem 3rem;
+  background-color: #f4f4f4;
+  padding: 2rem;
   border-radius: 16px;
   max-width: 600px;
   margin: 4rem auto 5rem;
-  /* Removed box-shadow */
   text-align: center;
 }
 #feedback h2 {
-  color: #00bfa5;
-  border-bottom: 3px solid #00bfa5;
+  color: #00796b;
+  border-bottom: 3px solid #00796b;
   padding-bottom: 0.3rem;
   margin-bottom: 1.8rem;
   font-size: 2.4rem;
-  /* Removed text-shadow */
-}
-form {
-  background: transparent;
-  padding: 0;
-  box-shadow: none;
-  text-align: left;
 }
 label {
   display: block;
   margin-bottom: 0.6rem;
   font-weight: 700;
-  color: #00bfa5;
-  /* Removed text-shadow */
+  color: #00796b;
 }
 input[type="text"],
 input[type="email"],
@@ -282,26 +195,21 @@ textarea {
   width: 100%;
   padding: 0.8rem 1rem;
   margin-bottom: 1.4rem;
-  border: 2px solid #008e76;
+  border: 2px solid #009688;
   border-radius: 8px;
   font-size: 1.05rem;
   font-family: inherit;
+  background-color: #fff;
+  color: #333;
   resize: vertical;
-  background-color: #121212;
-  color: #b2dfdb;
-  transition: border-color 0.3s;
-  /* Removed box-shadow */
 }
-input[type="text"]:focus,
-input[type="email"]:focus,
+input:focus,
 textarea:focus {
-  border-color: #00bfa5;
+  border-color: #00796b;
   outline: none;
-  /* Removed box-shadow */
 }
 button {
-  display: block;
-  background-color: #00bfa5;
+  background-color: #00796b;
   color: white;
   padding: 1rem 2rem;
   border: none;
@@ -310,15 +218,12 @@ button {
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.4s;
-  margin: 0 auto;
-  /* Removed box-shadow */
 }
 button:hover {
-  background-color: #008e76;
-  /* Removed box-shadow */
+  background-color: #004d40;
 }
 
-/* Utility */
+/* Back Button */
 .back-btn {
   background-color: #00796b;
   color: white;
@@ -329,11 +234,9 @@ button:hover {
   font-weight: 700;
   margin-bottom: 2rem;
   transition: background-color 0.3s;
-  /* Removed box-shadow */
 }
 .back-btn:hover {
   background-color: #004d40;
-  /* Removed box-shadow */
 }
 
 /* Responsive */
@@ -346,10 +249,19 @@ button:hover {
     width: 100%;
     height: 200px;
   }
-  .city-info {
-    min-width: auto;
-  }
 }
+</style>
+</head>
+<body>
+
+<!-- Include the same body structure and JavaScript from your original code -->
+<!-- Just paste your body and script from your original code below this -->
+
+<!-- ⬇️ Paste the same <header>, <main>, and <script> from your original code here -->
+<!-- I have kept only the CSS portion updated, rest of your code remains unchanged -->
+
+</body>
+</html>
 
 </style>
 </head>
@@ -529,7 +441,7 @@ button:hover {
       cities: [
         {
           name: "New York City",
-          image: "https://www.historyhit.com/app/uploads/bis-images/5150130/Statue-of-Liberty-e1632495792514-788x537.jpg?x96477.jpg",
+          image: "https://cdn.britannica.com/61/93061-050-99147DCE/Statue-of-Liberty-Island-New-York-Bay.jpg",
           places: [
             "Statue of Liberty – Iconic symbol of freedom.",
             "Central Park – Massive urban park in Manhattan.",
